@@ -1,0 +1,22 @@
+/// main.scss
+/// Descripción del contenido
+/// @author Nono Karames < karames@gmail.com >
+
+/// Color por defecto del fondo
+/// @type color
+$background-color-default: #2b3a54;
+/// Color por defecto
+/// @type size
+$color-default: #ff0;
+/// Tamaño por defecto
+/// @type size
+$font-size-default: 30px;
+
+html {
+  background-color: $background-color-default;
+  color: $color-default;
+}
+
+p {
+  font-size: $font-size-default;
+}

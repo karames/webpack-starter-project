@@ -1,0 +1,10 @@
+{
+  "source": "src/js/",
+  "destination": "documentation/esdoc/",
+  "plugins": [{
+    "name": "esdoc-standard-plugin",
+    "brand": {
+      "logo": "src/images/karames_logo_github_repository.png"
+    }
+  }]
+}
