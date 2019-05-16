@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Configuración Inicial Webpack con Vanilla|Vue|React|TypeScript|Sass",
   "license": "MIT",
+  "author": {
+    "name": "Nono Karames",
+    "email": "karames@gmail.com",
+    "url": "http://www.karames.com"
+  },
   "keywords": [
     "webpack",
     "javascript",
@@ -12,11 +17,6 @@
     "typescript",
     "sass"
   ],
-  "author": {
-    "name": "Nono Karames",
-    "email": "karames@gmail.com",
-    "url": "http://www.karames.com"
-  },
   "homepage": "https://github.com/karames/webpack-starter-project#readme",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/karames/webpack-starter-project/issues"
   },
-  "main": "main.js",
+  "main": "webpack.config.js",
   "private": true,
   "scripts": {
     "clean": "rm -r ./dist/ | rm -r ./public/ | rm -r ./documentation/",
