@@ -33,7 +33,7 @@
     "start": "webpack-dev-server --config=webpack.config.js --mode development --progress --open",
     "build-dev": "webpack --config=webpack.config.js --mode development --progress --devtool source-map",
     "build-pro": "webpack --config=webpack.config.js --mode production --progress",
-    "sassdoc": "sassdoc src/scss -d ./documentation/sassdoc",
+    "sassdoc": "sassdoc src/scss -d .documentation/sassdoc",
     "esdoc": "esdoc",
     "htmlhint": "htmlhint --ignore **/documentation/**, **/node_modules/**",
     "markdown": "markdown-it README.md -o README.html",

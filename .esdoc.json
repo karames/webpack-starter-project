@@ -1,6 +1,6 @@
 {
   "source": "src/js/",
-  "destination": "documentation/esdoc/",
+  "destination": ".documentation/esdoc/",
   "plugins": [{
     "name": "esdoc-standard-plugin",
     "brand": {

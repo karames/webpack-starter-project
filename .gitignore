@@ -179,5 +179,6 @@ typings/
 ##############
 ### Custom ###
 ##############
-info/
-documentation/
+.info/
+.documentation/
+.public/
