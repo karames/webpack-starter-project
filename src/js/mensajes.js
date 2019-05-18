@@ -4,6 +4,10 @@
  * @version 1.0.0
  */
 
-export const mostrarAlerta = () => {
-  alert('Hola Mundo');
+const mostrarAlerta = () => {
+  console.log('Salida de datos JSON por consola');
+  const datos = fetch('https://jsonplaceholder.typicode.com/photos?_limit=10');
+  return datos;
 };
+
+export default mostrarAlerta;

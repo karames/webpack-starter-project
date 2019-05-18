@@ -30,9 +30,9 @@
   "private": true,
   "scripts": {
     "clean": "rm -r ./dist/ | rm -r ./public/ | rm -r ./documentation/",
-    "start": "webpack-dev-server --config=webpack.config.js --mode development --progress --open",
-    "build-dev": "webpack --config=webpack.config.js --mode development --progress --devtool source-map",
-    "build-pro": "webpack --config=webpack.config.js --mode production --progress",
+    "start": "webpack-dev-server --progress --open",
+    "build-dev": "webpack --mode development --progress --devtool source-map",
+    "build-pro": "webpack --mode production --progress",
     "sassdoc": "sassdoc src/scss -d .documentation/sassdoc",
     "esdoc": "esdoc",
     "htmlhint": "htmlhint --ignore **/documentation/**, **/node_modules/**",
@@ -82,10 +82,5 @@
   "engines": {
     "node": ">= 10.15.3",
     "npm": ">= 6.9.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  }
 }
