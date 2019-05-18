@@ -1,6 +1,6 @@
 /**
- * @fileOverview contacto.js
- * @author Nono Karames < karames@gmail.com >
+ * @fileOverview saludo.js
+ * @author Nono Karames
  * @version 1.0.0
  */
 

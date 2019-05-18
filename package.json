@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/karames/webpack-starter-project/issues"
   },
-  "main": "webpack.config.js",
+  "main": "./src/js/main.js",
   "private": true,
   "scripts": {
     "clean": "rm -r ./dist/ | rm -r ./public/ | rm -r ./documentation/",

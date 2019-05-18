@@ -11,28 +11,32 @@
 */
 
 // require es utilizado por CommonJS - ES6 utilizada import
-// import PATH from 'path';
+// import path from 'path';
 
-const PATH = require('path');
+const path = require('path');
 const DIST_PATH = './dist';
 
-const AUTOPREFIXER = require('autoprefixer');
-const MINI_CSS_EXTRACT_PLUGIN = require('mini-css-extract-plugin');
-const HTML_WEBPACK_PLUGIN = require('html-webpack-plugin');
-const CLEAN_WEBPACK_PLUGIN = require('clean-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const WEBPACK = require('webpack');
 
 // Configuración Webpack
 const WEBPACK_CONFIG = {
   // devtool: 'source-map',
+  /*
   resolve: {
     extensions: ['.js'],
   },
+  */
+
   entry: {
-    'main': PATH.join(__dirname, './src/js/main.js'),
+    'main': path.join(__dirname, './src/js/main.js'),
   },
+
   output: {
-    path: PATH.resolve(__dirname, DIST_PATH),
+    path: path.resolve(__dirname, DIST_PATH),
     filename: './js/[name].js',
   },
 
@@ -57,16 +61,21 @@ const WEBPACK_CONFIG = {
         test: /\.(css|scss)$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
-          MINI_CSS_EXTRACT_PLUGIN.loader,
-          'css-loader',
+          // style-loader para inyectar directamente en el archivo.js
+          // {loader: 'style-loader'}
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+          },
           {
             loader: 'postcss-loader',
             options: {
               autoprefixer: {
                 browser: ['last 2 versions'],
               },
-              plugins: () => [AUTOPREFIXER],
+              plugins: () => [autoprefixer],
             },
           },
           {
@@ -108,19 +117,23 @@ const WEBPACK_CONFIG = {
   },
 
   plugins: [
-    new CLEAN_WEBPACK_PLUGIN(),
-    new MINI_CSS_EXTRACT_PLUGIN({
-      filename: './css/[name].css',
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: './css/main.css',
     }),
-    new HTML_WEBPACK_PLUGIN({
+    new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
     }),
-    new HTML_WEBPACK_PLUGIN({
+    new HtmlWebpackPlugin({
       template: './src/codigo.html',
       filename: 'codigo.html',
     }),
   ],
+
+  devServer: {
+    port: 5000,
+  },
 };
 
 // Exportamos como un módulo de CommonJS
