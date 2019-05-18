@@ -13,24 +13,23 @@
 // require es utilizado por CommonJS - ES6 utilizada import
 // import path from 'path';
 
-const path = require('path');
 const DIST_PATH = './dist';
 
+const path = require('path');
 const autoprefixer = require('autoprefixer');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const WEBPACK = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const webpack = require('webpack');
 
 // Configuración Webpack
-const WEBPACK_CONFIG = {
+const WebpackConfig = {
   // devtool: 'source-map',
   /*
   resolve: {
     extensions: ['.js'],
   },
   */
-
   entry: {
     'main': path.join(__dirname, './src/js/main.js'),
   },
@@ -58,7 +57,7 @@ const WEBPACK_CONFIG = {
         },
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css|scss|sass)$/,
         exclude: /node_modules/,
         use: [
           // style-loader para inyectar directamente en el archivo.js
@@ -117,9 +116,12 @@ const WEBPACK_CONFIG = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      dry: true,
+    }),
     new MiniCssExtractPlugin({
-      filename: './css/main.css',
+      filename: './css/[name].css',
+      chunkFilename: './css/[id].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -136,5 +138,4 @@ const WEBPACK_CONFIG = {
   },
 };
 
-// Exportamos como un módulo de CommonJS
-module.exports = WEBPACK_CONFIG;
+module.exports = WebpackConfig;
