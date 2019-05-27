@@ -35,7 +35,7 @@
     "build-pro": "webpack --mode production --progress",
     "sassdoc": "sassdoc src/scss -d .documentation/sassdoc",
     "esdoc": "esdoc",
-    "htmlhint": "htmlhint --ignore **/documentation/**, **/node_modules/**",
+    "htmlhint": "htmlhint --ignore **/.documentation/**, **/node_modules/**, **/.info/**",
     "markdown": "markdown-it README.md -o README.html",
     "build-css": "node-sass ./src/scss/main.scss ./public/css/main.css",
     "build-js": "babel ./src/js/main.js -o ./public/main.js",
